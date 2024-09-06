@@ -1,18 +1,154 @@
 :root {
-    --blue: hsl(223, 87%, 63%);
-    --paleBlue: hsl(223, 100%, 88%);
-    --lightRed: hsl(354, 100%, 66%);
+  --blue: hsl(223, 87%, 63%);
+  --paleBlue: hsl(223, 100%, 88%);
+  --lightRed: hsl(354, 100%, 66%);
 
-    --gray: hsl(0, 0%, 59%);
-    --veryDarkBlue: hsl(209, 33%, 12%);
+  --gray: hsl(0, 0%, 59%);
+  --veryDarkBlue: hsl(209, 33%, 12%);
 
-    --libreFranklin: 'Libre Franklin', sans-serif;
+  --libreFranklin: "Libre Franklin", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 body {
-    font-size: 1.25rem;
+  font-size: 1.25rem;
+  font-family: var(--libreFranklin);
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin: 20px 0;
+  font-weight: 300;
+  color: var(--gray);
+}
+
+h3 {
+  font-weight: 300;
+  margin: 20px 0;
+}
+
+header {
+  padding: 35px;
+  margin-top: 50px;
+}
+
+p {
+  font-size: 0.9rem;
+  margin: 15px 0;
+}
+
+strong {
+  font-weight: 700;
+  color: var(--veryDarkBlue);
+}
+
+form {
+  margin: 40px 0;
+}
+
+input {
+  padding: 14px 60px;
+  border-radius: 20px;
+  border: 1px solid var(--paleBlue);
+  margin-bottom: 10px;
+}
+
+input[type="email"]::placeholder {
+  color: var(--paleBlue); /* Change the color of the placeholder text */
+}
+
+button {
+  background-color: var(--blue);
+  font-weight: 600;
+  font-size: 14px;
+  color: white;
+  padding: 14px 100px;
+  border-radius: 20px;
+  border: none;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: var(--paleBlue);
+}
+
+i:hover {
+    cursor: pointer;
+}
+
+footer {
+  font-size: 0.75rem;
+  color: var(--gray);
+}
+
+.container {
+  padding: 30px;
+  text-align: center;
+}
+
+.logo {
+  width: 70px;
+}
+
+.illustration {
+  width: 330px;
+  margin: 30px 0;
+}
+
+.social-media-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.social-media-container i {
+  margin: 0 10px;
+  color: var(--blue);
+  font-size: 2rem;
+}
+
+.attribution {
+  font-size: 11px;
+  display: none;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }
 
 
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+/* Styles for screens wider than 800 pixels (desktop design) */
+@media (min-width: 800px) {
+
+    body {
+        font-size: 2.5rem;
+    }
+
+    header {
+        margin-top: 25px;
+    }
+
+    .container {
+      padding: 0;
+    }
+
+    .illustration {
+        width: 550px;
+    }
+    
+    .social-media-container {
+      margin-top: 0px;
+    }
+
+    .attribution {
+      display: block;
+    }
+
+}
+

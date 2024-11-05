@@ -1,37 +1,42 @@
 // Get the form element
 const form = document.getElementById("myForm");
 
-// Get the email input and error message
+// Get the email input and error/success messages
 const email = document.getElementById("email");
-const error = document.getElementById("error-state");
-const value = email.value.trim();
+const error = document.getElementById("error");
+const success = document.getElementById("success");
 
-// Function that validates the form 
-function validation() {
-  // Regex to look for an email validation pattern
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  // If the input type email is left with no text in it
-  if (email === "") {
-    email.classList.toggle("error-state");
-    error.textContent = "Whoops! It looks like you forgot to add your email";
-    return;
+// Adds an event "submit" to my form element
+form.addEventListener("submit", (e) => {
+  let messages = [];
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  // Clear previous messages
+  error.innerText = "";
+  // Hide success message initially
+  success.style.display = "none";
+  // Checks if the value of my input is empty or null
+  if (email.value === "" || email.value == null) {
+    messages.push("Please provide a valid email address");
+  } else if (!emailRegex.test(email.value)) {
+    messages.push("Please provide a valid email address");
   }
-
-  // If the regex doesn't match meaning the email pattern is wrong
-  if (!emailPattern.test(value)) {
-    email.textContent = "Please provide a valid email address";
-    return;
+  if (messages.length > 0) {
+    e.preventDefault();
+    error.innerText = messages.join(", ");
+    email.classList.add("error-message");
+    // Style's the input border to red
+    email.style.border = "1px solid red";
+  } else {
+    e.preventDefault();
+    // Set success message
+    success.innerText = "Email sent";
+    // Show success message
+    success.style.display = "block";
+    // Style's the input border to green
+    email.style.border = "1px solid green";
+    // Remove error state
+    email.classList.remove("error-state");
   }
-
-  // Console log's and alerts the success state
-  alert("Email submitted successfully!");
-  console.log("Email submitted successfully!");
-}
-
-// Adds the submit event to the form and run's the validation function
-form.addEventListener("submit", function (event) {
-  // Prevent form submission
-  event.preventDefault();
-  validation();
 });

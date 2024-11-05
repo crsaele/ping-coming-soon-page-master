@@ -2,16 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-      <!-- displays site properly based on user's device -->
+      <!-- Displays site properly based on user's device -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- favicon import -->
+    <!-- Favicon import -->
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-    <!-- font awesome import -->
+    <!-- Font awesome import -->
     <script
       src="https://kit.fontawesome.com/a993af49d3.js"
       crossorigin="anonymous"
@@ -23,9 +23,9 @@
       href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <!-- web browser page title -->
+    <!-- Web browser page title -->
     <title>Frontend Mentor | Ping coming soon page</title>
-    <!-- main style sheet -->
+    <!-- Main style sheet -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -35,9 +35,11 @@
       </header>
       <h1>We are launching <strong>soon!</strong></h1>
       <p>Subscribe and get notified</p>
-      <form id="myForm" method="get">
-        <input type="email" id="email" name="email" placeholder="Your email address..."/>
-        <button type="submit">Notify Me</button>
+      <form id="myForm" action="/">
+        <input type="email" id="email" name="email" placeholder="Your email address..."/> 
+        <div id="error" class="error-message"></div>
+        <div id="success" class="success-message"></div>       
+        <button type="submit" value="submit">Notify Me</button>
       </form>
       <img src="images/illustration-dashboard.png" class="illustration" alt="illustration-dashboard">
       <footer>
@@ -57,6 +59,7 @@
         >. Coded by <a href="https://github.com/crsaele">Carlos Al</a>.
       </p>
     </div>
-  <script src="validation.js"></script>
+  <!-- Javascript file that validates the form -->
+  <script src="validation.js" defer></script>
   </body>
 </html> 

@@ -57,12 +57,15 @@ form {
 input {
   padding: 14px 60px;
   border-radius: 20px;
+  font-family: var(--libreFranklin);
   border: 1px solid var(--paleBlue);
+  color: var(--veryDarkBlue);
   margin-bottom: 10px;
 }
 
+/* Changes the color of the placeholder text */
 input[type="email"]::placeholder {
-  color: var(--paleBlue); /* Change the color of the placeholder text */
+  color: var(--paleBlue);
 }
 
 button {
@@ -106,13 +109,13 @@ footer {
 .social-media-container {
   display: flex;
   justify-content: center;
-  margin-top: 60px;
+  margin-top: 20px;
 }
 
 .social-media-container i {
   margin: 0 10px;
   color: var(--blue);
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .attribution {
@@ -125,25 +128,37 @@ footer {
 }
 
 /* error state class */
-.error-state {
-  display: none;
-  font-size: 8px;
+.error-message {
+  font-size: small;
+  margin: 10px 0;
   color: red;
-  border: 1px solid red;
+}
+
+.success-message {
+  color: green;
+  margin: 10px 0;
+  font-size: small;
+  /* Initially hide the success message */
+  display: none;
 }
 
 /* Styles for screens wider than 800 pixels (desktop design) */
+
 @media (min-width: 800px) {
   body {
     font-size: 2.5rem;
   }
 
   header {
-    margin-top: 25px;
+    margin: 0;
   }
 
   h1 {
     font-size: 2rem;
+  }
+
+  input {
+    margin: 0;
   }
 
   .container {
@@ -152,6 +167,7 @@ footer {
 
   .illustration {
     width: 550px;
+    margin: 0;
   }
 
   .social-media-container {

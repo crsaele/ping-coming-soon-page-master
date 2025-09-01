@@ -10,6 +10,8 @@ The Ping Coming Soon Page is a single-column, responsive web page designed to co
 
 ## Screenshot
 
+![](./ping-coming-soon-page-master.png)
+
 ## Links
 
 [View Live Site](https://crsaele.github.io/ping-coming-soon-page-master/)
@@ -18,6 +20,7 @@ The Ping Coming Soon Page is a single-column, responsive web page designed to co
 
 - HTML5
 - CSS3
+- Mobile-first workflow
 - JavaScript (ES6+)
 
 ## What I Learned
